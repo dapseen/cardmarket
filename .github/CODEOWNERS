@@ -1,0 +1,4 @@
+# Editing these files require reviews from the Platform Team
+
+/.release-please-manifest.json @platformteam
+/CHANGELOG.md @platformteam
