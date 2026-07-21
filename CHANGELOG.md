@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/dapseen/cardmarket/compare/v0.2.0...v0.2.1) (2026-07-21)
+
+
+### Bug Fixes
+
+* update shell script ([#5](https://github.com/dapseen/cardmarket/issues/5)) ([bbfe750](https://github.com/dapseen/cardmarket/commit/bbfe750a855b30515b3bea1501dc92a543e38f21))
+
 ## [0.2.0](https://github.com/dapseen/cardmarket/compare/v0.1.0...v0.2.0) (2026-07-20)
 
 
