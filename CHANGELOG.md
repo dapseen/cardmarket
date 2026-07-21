@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/dapseen/cardmarket/compare/v0.2.1...v0.2.2) (2026-07-21)
+
+
+### Bug Fixes
+
+* update readme and application performance ([#7](https://github.com/dapseen/cardmarket/issues/7)) ([c4f9b2a](https://github.com/dapseen/cardmarket/commit/c4f9b2a1ef379db90657c6069a9f8d6a07aaa777))
+
 ## [0.2.1](https://github.com/dapseen/cardmarket/compare/v0.2.0...v0.2.1) (2026-07-21)
 
 
