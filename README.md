@@ -6,7 +6,7 @@ Registry (GHCR). Kubernetes runs the image in Minikube.
 
 ## Production Setup and Tradeoffs
 
-I discussed tradeoffs, [production requirements](/docs/production.md)
+I discussed tradeoffs, [production requirements](/docs/production.md) and also [engineering culture](/docs/culture.md)
 
 ## Updated Nginx and Script file
 

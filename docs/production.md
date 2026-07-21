@@ -1,8 +1,6 @@
 # Production readiness
 
-Use this checklist before you move Cardmarket to production. Record the
-owner, target date, and evidence for each item. Do not approve production
-use until all required items are complete.
+Areas I will improve if I have more time before moving to production
 
 ## Application improvement
 
@@ -104,7 +102,7 @@ and traffic policy.
 Minikube is for development and demonstrations. Do not use Minikube as the
 production cluster.
 
-### Disaster recovery - SLA,SLO and SLI
+### Disaster recovery 
 
 - [ ] Define the recovery time objective (RTO).
 - [ ] Define the recovery point objective (RPO).
@@ -118,6 +116,10 @@ production cluster.
 - [ ] Run a disaster recovery exercise at regular intervals.
 
 A backup is not sufficient until a restore test is successful.
+
+### IAC
+
+- [ ] Terraform or Pulumi for IAC and avoid clickOPs
 
 ## GitOps
 
@@ -143,14 +145,9 @@ Git is the source of truth. Argo CD applies the approved state from Git.
 - [ ] Create a Helm chart for the Deployment, Service, and Ingress.
 - [ ] Put common defaults in `values.yaml`.
 - [ ] Put environment-specific values in separate files.
-- [ ] Do not put secrets in Helm values.
-- [ ] Pin the container image by release tag or digest.
-- [ ] Add chart schema validation.
 - [ ] Run `helm lint` in CI.
-- [ ] Render and validate templates in CI.
-- [ ] Give the chart and application separate version numbers.
 
-Keep the chart small. Do not add a value for each Kubernetes field.
+I will Keep the chart small. Do not add a value for each Kubernetes field.
 
 ## Observability
 
@@ -161,8 +158,7 @@ Keep the chart small. Do not add a value for each Kubernetes field.
 - [ ] Create dashboards for traffic, errors, latency, and saturation.
 - [ ] Show deployment versions on dashboards.
 - [ ] Add links from alerts to dashboards and runbooks.
-- [ ] Control dashboard changes through Git.
-- [ ] Test access control for production data.
+- [ ] Define product ownership
 
 
 
@@ -178,25 +174,11 @@ Keep the chart small. Do not add a value for each Kubernetes field.
 
 
 
-### Datadog
-
-- [ ] Decide if Datadog replaces or supplements Prometheus and Grafana.
-- [ ] Install the Datadog Agent with minimum permissions.
-- [ ] Store the API key in the external secret store.
-- [ ] Enable only required logs, metrics, traces, and integrations.
-- [ ] Remove sensitive data before telemetry leaves the cluster.
-- [ ] Set retention and cost limits.
-
-Do not collect the same telemetry in two systems without a clear requirement.
-
 ### PagerDuty
 
 - [ ] Connect only actionable alerts to PagerDuty.
 - [ ] Define primary and secondary on-call schedules.
 - [ ] Add a runbook to each page.
-- [ ] Set escalation and acknowledgement rules.
-- [ ] Test alerts during a controlled exercise.
-- [ ] Review noisy alerts and remove alerts with no action.
 
 
 
@@ -302,10 +284,11 @@ production platform uses AWS.
 - [ ] Put a supported Web Application Firewall before the public Ingress.
 - [ ] Enable managed rules for common web attacks.
 - [ ] Add rate limits and request size limits.
-- [ ] Start new rules in monitor mode when possible.
-- [ ] Log blocked requests without sensitive data.
-- [ ] Test valid traffic and known attack patterns.
-- [ ] Define an emergency rule change procedure.
+
+### VPC and Networking
+
+- [ ] Deploy worker nodes in private subnets
+- [ ] Multi zone deployment for high Availability 
 
 A WAF is one security layer. It does not replace secure application code,
 authentication, or authorization.
@@ -331,6 +314,10 @@ authentication, or authorization.
 - [ ] Enable secret scanning for the Git repository.
 - [ ] Define remediation times by severity.
 - [ ] Track accepted risk with an owner and expiry date.
-- [ ] Rescan production images at regular intervals.
-- [ ] Test the response procedure with a sample finding.
+- [ ] Rescan production images at during CI
 
+
+### Zero Trust security
+
+- [ ] Enable MFA
+- [ ] Fine grained access control policy
