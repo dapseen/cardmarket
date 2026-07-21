@@ -40,7 +40,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: cardmarket
-          image: ghcr.io/dapseen/cardmarket:0.2.0
+          image: ghcr.io/dapseen/cardmarket:0.2.2
           imagePullPolicy: Always
           ports:
             - name: http
